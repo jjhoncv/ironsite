@@ -8,7 +8,7 @@ export interface PromisifiedPool extends Omit<Pool, "query"> {
 
 const params = {
   host: process.env.MYSQL_HOST,
-  user: process.env.MYSQL_USER,
+  user: process.env.USER_MYSQL,
   password: process.env.MYSQL_ROOT_PASSWORD,
   database: process.env.MYSQL_DATABASE,
 };
