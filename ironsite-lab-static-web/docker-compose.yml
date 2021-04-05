@@ -1,0 +1,21 @@
+version: '3'
+services:
+  web:
+    env_file: 
+      - ./app/.env
+    build:
+      context: docker/node
+    container_name: $PROJECT_NAME
+    restart: unless-stopped
+    volumes:
+      - ./app:/app
+    ports:
+      - "3000:3000"
+    command: bash -c "npm install && npm start"
+
+networks:
+  default:
+    external: 
+      name: $NETWORK_NAME
+
+

@@ -1,0 +1,37 @@
+version: '3'
+services:
+  api:
+    env_file: 
+      - ./app/.env
+    build:
+      context: docker/node
+    container_name: $PROJECT_NAME
+    restart: unless-stopped
+    volumes:
+      - ./app:/app
+      - ./docker/node/wait-for-it.sh:/wait-for-it.sh
+    depends_on:
+      - bd
+    ports:
+      - "4000:4000"
+    entrypoint: /wait-for-it.sh -t 5 bd:3306 -- 
+    command: bash -c "npm install && npm start"
+
+  bd:
+    env_file: 
+      - ./app/.env
+    build:
+      context: docker/mysql
+    container_name: $PROJECT_NAME-bd
+    restart: unless-stopped   
+    ports:
+      - '3306:3306'
+    volumes: 
+      - ./docker/mysql/data:/var/lib/mysql
+
+networks:
+  default:
+    external: 
+      name: $NETWORK_NAME
+
+
