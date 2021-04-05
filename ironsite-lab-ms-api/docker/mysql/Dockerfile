@@ -1,4 +1,4 @@
-FROM mysql:5.6
+FROM mysql:5.6.40
 COPY my.cnf /etc/mysql/my.cnf
 RUN usermod -u 1000 mysql
 RUN mkdir -p /var/run/mysqld
