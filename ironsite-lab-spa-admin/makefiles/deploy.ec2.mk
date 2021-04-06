@@ -1,4 +1,4 @@
-SERVER_NAME         = ubuntu@ec2-54-95-81-0.ap-northeast-1.compute.amazonaws.com
+include ../ServerEC2.mk
 PROJECT_SERVER     ?= ${SERVER_NAME}:~/${PROJECT_NAME}
 
 PROJECT_DEPLOY_NAME = ironsite-lab-static-web

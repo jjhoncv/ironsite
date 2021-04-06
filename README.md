@@ -5,6 +5,8 @@ site make in nodejs by deploy to server EC2
 - static-web
 - proxy
 
+[demo de la vista!](http://ironsite.tk)
+
 ### ms-api
 endpoint by connection static-web and spa-admin
 
@@ -23,6 +25,11 @@ Install in server EC2 nodejs
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
 . ~/.nvm/nvm.sh
 nvm install node
+```
+
+Install in server PM2 global
+```sh
+npm install pm2 -g
 ```
 
 Install in server EC2 nginx
@@ -67,6 +74,11 @@ server {
 }
 ```
 
+create directory /etc/nginx/includes
+```sh
+sudo mkdir -p /etc/nginx/includes
+```
+
 And create file /etc/nginx/includes/proxy.conf with these lines
 ```sh
 proxy_set_header Host $host;
@@ -78,3 +90,9 @@ proxy_request_buffering off;
 proxy_http_version 1.1;
 proxy_intercept_errors on;
 ```
+
+before restart ngnix
+```sh
+sudo systemctl restart nginx
+```
+

@@ -14,15 +14,15 @@ const App = () => {
     app.use(cors());
     app.use(express.json());
     app.use(express.urlencoded({ extended: true }));
-    app.use(express.static(path.join(__dirname, "public")));
-    app.use(express.static(path.join(__dirname, "public/assets")));
   };
-
+  
   const routes = () => {
     const router: Router = Router();
-    // router.use("/admin", adminRoutes);
+    router.use("/admin", adminRoutes);
     router.use("/", siteRoutes);
     app.use("/", router);
+    app.use(express.static(path.join(__dirname, "public/admin")));
+    app.use(express.static(path.join(__dirname, "public/assets")));
   };
 
   const init = () => {

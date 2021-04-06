@@ -1,4 +1,4 @@
-SERVER_NAME     = ubuntu@ec2-54-95-81-0.ap-northeast-1.compute.amazonaws.com
+include ../ServerEC2.mk
 PROJECT_SERVER ?= ${SERVER_NAME}:~/${PROJECT_NAME}
 
 build:
@@ -6,19 +6,21 @@ build:
 		-it \
 		--rm \
 		-u 1000:1000 \
-		--name ${PROJECT_NAME} \
 		-v $(PWD)/app:/app \
 		-w /app \
 		node:11-slim \
 		npm run build
-	@cp -r app/src/public app/dist/src
+	@mkdir -p app/dist/src/public
+	@cp -r app/src/public/assets app/dist/src/public/assets
+	@cp -r app/src/public/uploads app/dist/src/public/uploads
 	@cp -r app/src/views app/dist/src
 	@cp -r app/package.json app/dist
 	@cp -r scripts app/dist
 	@cp app/.env.prod app/dist/.env
 
 deploy:
-	@rsync -avL --del -e "ssh -i DashboardApiKey.pem" \
+	@rsync -avL \
+		-e "ssh -i DashboardApiKey.pem" \
 		app/dist/ ${PROJECT_SERVER}
 	ssh -i DashboardApiKey.pem ${SERVER_NAME} \
 	'cd ~/${PROJECT_NAME}; sh scripts/start.sh ${PROJECT_NAME}'

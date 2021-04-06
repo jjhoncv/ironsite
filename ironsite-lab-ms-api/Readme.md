@@ -1,10 +1,10 @@
-# ironsite-lab-ms-api-bd
+# ironsite-lab-ms-api
 - docker
 - nodejs
 - express
 - mysql
 
-## custom after
+## local
 Need file .env in root folder /app with this configs
 ```sh
 MYSQL_HOST=bd
@@ -18,14 +18,7 @@ SERVER_HOST=http://localhost
 SERVER_PORT=4000
 ```
 
-Install in server EC2 nodejs
-```sh
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
-. ~/.nvm/nvm.sh
-nvm install node
-```
-
-## local
+Only commands by local
 ```sh
 make install
 ```
@@ -38,6 +31,19 @@ make start
 make stop
 ```
 ## production
+Need file .env.prod in root folder /app with this configs, by eg:
+```sh
+MYSQL_HOST=dashboardinstance.xxxxx.ap-northeast-1.rds.amazonaws.com
+MYSQL_USER=admin
+MYSQL_PASSWORD=xxxxx
+MYSQL_DATABASE=dashboard
+
+MYSQL_ROOT_PASSWORD=xxxxx
+
+SERVER_HOST=http://localhost
+SERVER_PORT=4000
+```
+
 need connection to EC2 key DashboardApiKey.pem in root this folder
 ```sh
 make build
@@ -46,9 +52,3 @@ make build
 ```sh
 make deploy
 ```
-
-<!-- # install node
-#download node and npm
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
-. ~/.nvm/nvm.sh
-nvm install node -->

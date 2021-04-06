@@ -4,8 +4,8 @@
 
 sudo chmod -R 777 ~/$1
 
-rm -fr $HOME/$PROJECT_DEPLOY/
+rm -fr $HOME/$2/
 
-mkdir -p $HOME/$PROJECT_DEPLOY
+mkdir -p $HOME/$2
 
-cp -r ~/$1/* $HOME/$PROJECT_DEPLOY/
+cp -r ~/$1/* $HOME/$2/
