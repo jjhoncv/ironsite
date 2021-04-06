@@ -32,12 +32,12 @@ make stop
 ## production
 Need file .env.prod in root folder /app with this configs, by eg.
 ```sh
-SERVER_HOST=http://localhost
+SERVER_HOST=http://IP_SERVER
 SERVER_PORT=3000
 
-API_LOGIN=http://localhost:4000/api/auth/login
-API_REGISTER=http://localhost:4000/api/auth/register
-API_PRODUCTS=http://localhost:4000/api/products
+API_LOGIN=http://IP_SERVER/api/auth/login
+API_REGISTER=http://IP_SERVER/api/auth/register
+API_PRODUCTS=http://IP_SERVER/api/products
 ```
 
 need connection to EC2 key DashboardApiKey.pem in root this folder

@@ -40,7 +40,7 @@ MYSQL_DATABASE=dashboard
 
 MYSQL_ROOT_PASSWORD=xxxxx
 
-SERVER_HOST=http://localhost
+SERVER_HOST=http://IP_SERVER
 SERVER_PORT=4000
 ```
 

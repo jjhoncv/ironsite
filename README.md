@@ -59,16 +59,16 @@ Modified file /etc/nginx/sites-available/default with these lines
 server {
     listen 80;
 
-    server_name localhost;
+    server_name IP_SERVER;
 
     location / {
         include /etc/nginx/includes/proxy.conf;
-        proxy_pass http://localhost:3000;
+        proxy_pass http://IP_SERVER:3000;
     }
 
     location /api {
         include /etc/nginx/includes/proxy.conf;
-        proxy_pass http://localhost:4000/api;
+        proxy_pass http://IP_SERVER:4000/api;
     }
 
     access_log off;
