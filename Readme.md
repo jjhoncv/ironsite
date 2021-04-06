@@ -1,34 +1,14 @@
-# ironsite-lab-ms-api-bd
-- docker
-- nodejs
-- express
-- mysql
+# ironsite
+site make in nodejs by deploy to server EC2
+- ms-api
+- spa-admin
+- static-web
+- proxy
 
-## local
-
+# custom after
+install server nodejs
 ```sh
-make install
-```
-
-```sh
-make start
-```
-
-```sh
-make stop
-```
-## production
-
-```sh
-make build
-```
-
-```sh
-make deploy
-```
-
-<!-- # install node
-#download node and npm
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
 . ~/.nvm/nvm.sh
-nvm install node -->
+nvm install node
+```
