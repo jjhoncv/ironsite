@@ -18,7 +18,7 @@ make start
 make stop
 ```
 ## production
-
+need connection to EC2 key DashboardApiKey.pem in root thiss folder
 ```sh
 make build
 ```
