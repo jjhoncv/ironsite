@@ -5,7 +5,7 @@
 - mysql
 
 ## custom after
-need file .env in root folder /app with this configs
+Need file .env in root folder /app with this configs
 ```sh
 MYSQL_HOST=bd
 MYSQL_USER=user
@@ -16,6 +16,13 @@ MYSQL_ROOT_PASSWORD=12345678
 
 SERVER_HOST=http://localhost
 SERVER_PORT=4000
+```
+
+Install in server EC2 nodejs
+```sh
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
+. ~/.nvm/nvm.sh
+nvm install node
 ```
 
 ## local
@@ -31,7 +38,7 @@ make start
 make stop
 ```
 ## production
-need connection to EC2 key DashboardApiKey.pem in root thiss folder
+need connection to EC2 key DashboardApiKey.pem in root this folder
 ```sh
 make build
 ```
