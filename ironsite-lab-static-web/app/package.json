@@ -4,7 +4,10 @@
   "description": "Project web",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon --watch src -e ts --exec ts-node src/index.ts"
+    "start": "nodemon --watch src -e ts --exec ts-node src/index.ts",
+    "build": "rm -fr ./dist && NODE_ENV=build tsc",
+    "prepublish": "pm2 stop $PROJECT_NAME || true",
+    "publish": "NODE_ENV=build pm2 start src/index.js --name $PROJECT_NAME"
   },
   "author": "Jhonnatan Castro",
   "license": "ISC",
@@ -12,11 +15,11 @@
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "mysql": "^2.17.1",
-    "nodemon": "^2.0.2",
-    "pug": "^3.0.2"
+    "pug": "^3.0.2",
+    "pm2": "^4.5.6"
   },
   "devDependencies": {
+    "nodemon": "^2.0.2",
     "cpx": "^1.5.0",
     "@types/body-parser": "^1.17.1",
     "@types/cors": "^2.8.6",

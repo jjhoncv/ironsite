@@ -12,7 +12,7 @@ exports.varsUsingWebpack = () => {
 
 exports.createVarsDefinePlugin = () => {
   const newVars = {};
-  let envConfig = process.env;
+  let envConfig = variableExpansion(dotenv.config({ path: pathEnv })).parsed;
   for (let k in envConfig) {
     newVars['process.env.' + k] = JSON.stringify(envConfig[k]);
   }

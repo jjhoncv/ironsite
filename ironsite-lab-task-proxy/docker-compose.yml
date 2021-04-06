@@ -2,8 +2,11 @@ version: '3'
 services:
   proxy:
     build:
-      context: docker/proxy
+      context: docker/nginx
     container_name: $PROJECT_NAME
+    volumes:
+      - ./docker/nginx/conf.d:/etc/nginx/conf.d
+      - ./docker/nginx/includes:/etc/nginx/includes
     ports:
       - 80:80
 

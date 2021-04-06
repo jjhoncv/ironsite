@@ -11,7 +11,7 @@ services:
       - ./app:/app
     ports:
       - "3000:3000"
-    command: bash -c "npm install && npm start"
+    command: npm start
 
 networks:
   default:

@@ -1,8 +1,10 @@
 {
   "compilerOptions": {
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "outDir": "dist/src"
   },
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "dist"
   ],
 }

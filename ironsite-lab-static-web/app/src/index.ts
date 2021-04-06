@@ -1,7 +1,8 @@
 import express, { Application, Router } from "express";
 import cors from "cors";
-import { siteRoutes } from "./routes";
+import { siteRoutes, adminRoutes } from "./routes";
 import path from "path";
+import "./utils/config";
 import { testConnectionApi } from "./utils/testConnectionApi";
 
 const App = () => {
@@ -13,11 +14,13 @@ const App = () => {
     app.use(cors());
     app.use(express.json());
     app.use(express.urlencoded({ extended: true }));
+    app.use(express.static(path.join(__dirname, "public")));
     app.use(express.static(path.join(__dirname, "public/assets")));
   };
 
   const routes = () => {
     const router: Router = Router();
+    // router.use("/admin", adminRoutes);
     router.use("/", siteRoutes);
     app.use("/", router);
   };
@@ -31,7 +34,7 @@ const App = () => {
     );
     (async () => {
       console.info(await testConnectionApi());
-    })()
+    })();
   };
 
   return {
