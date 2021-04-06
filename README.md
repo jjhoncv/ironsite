@@ -5,7 +5,9 @@ site make in nodejs by deploy to server EC2
 - static-web
 - proxy
 
-[demo de la vista!](http://ironsite.tk)
+[static web](http://ironsite.tk)
+[spa admin](http://ironsite.tk/admin)
+[ms-api](http://ironsite.tk/api)
 
 ### ms-api
 endpoint by connection static-web and spa-admin
