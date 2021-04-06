@@ -4,8 +4,21 @@
 - express
 - mysql
 
-## local
+## custom after
+need file .env in root folder /app with this configs
+```sh
+MYSQL_HOST=bd
+MYSQL_USER=user
+MYSQL_PASSWORD=12345678
+MYSQL_DATABASE=ironsite
 
+MYSQL_ROOT_PASSWORD=12345678
+
+SERVER_HOST=http://localhost
+SERVER_PORT=4000
+```
+
+## local
 ```sh
 make install
 ```
