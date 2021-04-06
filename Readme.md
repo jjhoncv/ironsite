@@ -5,16 +5,16 @@ site make in nodejs by deploy to server EC2
 - static-web
 - proxy
 
-## ms-api
+### ms-api
 endpoint by connection static-web and spa-admin
 
-## spa-admin
+### spa-admin
 admin reactjs by static-web
 
-## static-web
+### static-web
 site web
 
-## proxy
+### proxy
 connect site web to port 80 in proxy reverse 
 
 # custom after
