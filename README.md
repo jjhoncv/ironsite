@@ -98,3 +98,13 @@ before restart ngnix
 sudo systemctl restart nginx
 ```
 
+### PM2
+show list instances nodejs in server EC2 by production
+```sh
+make pm2.list
+```
+
+show logs instances nodejs
+```sh
+make pm2.logs
+```
