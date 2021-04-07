@@ -4,7 +4,7 @@ import { testConnectionApi } from "../../utils/testConnectionApi";
 const route: Router = Router();
 
 route.get("/", async (req: Request, res: Response) => {
-  res.render("home", {
+  res.render("pages/index", {
     title: "Express",
     connectionApi: await testConnectionApi(),
   });

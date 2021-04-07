@@ -1,7 +1,9 @@
 {
   "compilerOptions": {
     "esModuleInterop": true,
-    "outDir": "dist/src"
+    "outDir": "dist/src",
+    "jsx": "react",
+    "allowSyntheticDefaultImports": true
   },
   "exclude": [
     "node_modules",

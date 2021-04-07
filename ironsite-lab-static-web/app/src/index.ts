@@ -4,18 +4,20 @@ import { siteRoutes, adminRoutes } from "./routes";
 import path from "path";
 import "./utils/config";
 import { testConnectionApi } from "./utils/testConnectionApi";
+import * as expressReactViews from "express-react-views";
 
 const App = () => {
   const app: Application = express();
 
   const middlewares = () => {
     app.set("views", path.join(__dirname, "views"));
-    app.set("view engine", "pug");
+    app.set("view engine", "tsx");
+    app.engine("tsx", expressReactViews.createEngine());
     app.use(cors());
     app.use(express.json());
     app.use(express.urlencoded({ extended: true }));
   };
-  
+
   const routes = () => {
     const router: Router = Router();
     router.use("/admin", adminRoutes);
