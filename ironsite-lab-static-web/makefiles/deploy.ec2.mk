@@ -9,15 +9,25 @@ build:
 		-v $(PWD)/app:/app \
 		-w /app \
 		node:11-slim \
-		npm run build
-	@mkdir -p app/dist/src/public
-	@cp -r app/src/public/assets app/dist/src/public/assets
-	@cp -r app/src/public/uploads app/dist/src/public/uploads
-	@cp -r app/src/views app/dist/src
+		npm run build:server
+	
+	@mkdir -p app/dist/server/public
+	@cp -r app/src/server/public/statics app/dist/server/public/statics
+	@cp -r app/src/server/public/uploads app/dist/server/public/uploads
 	@cp -r app/package.json app/dist
 	@cp -r scripts app/dist
 	@cp app/.env.prod app/dist/.env
-
+	
+	@docker run \
+		-it \
+		--rm \
+		-u 1000:1000 \
+		-v $(PWD)/app:/app \
+		-w /app \
+		node:11-slim \
+		npm run build:client
+	@cp -r app/out/* app/dist/src/public/statics/js
+	
 deploy:
 	@rsync -avL \
 		-e "ssh -i DashboardApiKey.pem" \

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>
+    <%= htmlWebpackPlugin.options.title %>
+  </title>
+</head>
+
+<body>
+  <script>
+    var data = {
+      banners: [
+        {
+          image: "http://localhost:3000/statics/imgs/intro-img1.jpg",
+          title: "Soluciones para negocios",
+          description:
+            "The template you will be able to create a site for your business. The template has many different blocks from which you can create your own unique site.",
+          link: "/",
+          text: "Get in Touch",
+          zindex: 1,
+        },
+        {
+          image: "http://localhost:3000/statics/imgs/intro-img2.jpg",
+          title: "A la medida de tu negocio",
+          description:
+            "Since our establishment, we have been delivering high-quality and sustainable software solutions for corporate business purposes.",
+          link: "/",
+          text: "Get in Touch",
+          zindex: 0,
+        },
+        {
+          image: "http://localhost:3000/statics/imgs/intro-img3.jpg",
+          title: "Cambia tu forma de pensar",
+          description:
+            "Since our establishment, we have been delivering high-quality and sustainable software solutions for corporate business purposes.",
+          link: "/",
+          text: "Get in Touch",
+          zindex: 0,
+        },
+      ]
+    }
+  </script>
+  <div id="app"></div>
+</body>
+
+</html>

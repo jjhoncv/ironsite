@@ -4,3 +4,4 @@ node_modules
 **/docker/mysql/data
 DashboardApiKey.pem
 **/dist
+**/out
