@@ -10,8 +10,8 @@
     "build:server": "rm -fr ./dist && NODE_ENV=build tsc",
     "start": "npm run start:server & npm run start:client",
     "build": "npm run build:server && npm run build:client",
-    "prepublish": "pm2 stop $PROJECT_NAME || true",
-    "publish": "NODE_ENV=build pm2 start src/index.js --name $PROJECT_NAME"
+    "prepublish": "pm2 delete $PROJECT_NAME || true",
+    "publish": "NODE_ENV=build pm2 start src/server/index.js --name $PROJECT_NAME"
   },
   "author": "Jhonnatan Castro",
   "license": "ISC",

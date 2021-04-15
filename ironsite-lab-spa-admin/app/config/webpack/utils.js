@@ -3,11 +3,11 @@ const dotenv = require('dotenv');
 const variableExpansion = require('dotenv-expand');
 const rootPath = path.join(__dirname, '../../');
 
-const fileEnv = process.env.NODE_ENV ? "" : ".local";
+const fileEnv = process.env.NODE_ENV ? ".prod" : ".local";
 const pathEnv = path.join(rootPath, ".env" + fileEnv);
 
 exports.varsUsingWebpack = () => {
-  dotenv.config({ path: pathEnv });
+  variableExpansion(dotenv.config({ path: pathEnv }));
 }
 
 exports.createVarsDefinePlugin = () => {

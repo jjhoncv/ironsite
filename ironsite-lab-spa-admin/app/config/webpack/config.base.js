@@ -7,7 +7,7 @@ const rootPath = path.join(__dirname, '../../')
 
 varsUsingWebpack();
 
-const publicPath = process.env.PATH_STATIC + '/';
+const publicPath = process.env.CLIENT_STATICS + '/';
 
 module.exports = {
   devtool: 'source-map',

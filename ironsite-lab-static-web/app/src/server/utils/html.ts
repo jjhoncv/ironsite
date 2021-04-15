@@ -3,7 +3,7 @@ import site from "./../constants/site";
 const bundle = (view) => {
   let bundle = `${process.env.CLIENT_STATICS}/${view}.js`;
   if (process.env.NODE_ENV) {
-    bundle = `${process.env.SERVER_STATICS}/${view}.min.js`;
+    bundle = `${process.env.SERVER_STATICS}/js/${view}.min.js`;
   }
   return bundle;
 };

@@ -2,7 +2,7 @@ version: '3'
 services:
   admin:
     env_file: 
-      - ./app/.env
+      - ./app/.env.local
     build:
       context: docker/node
     container_name: $PROJECT_NAME

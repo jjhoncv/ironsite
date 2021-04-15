@@ -2,7 +2,7 @@ include ../ServerEC2.mk
 PROJECT_SERVER     ?= ${SERVER_NAME}:~/${PROJECT_NAME}
 
 PROJECT_DEPLOY_NAME = ironsite-lab-static-web
-PROJECT_DEPLOY_DIR  = src/public/admin
+PROJECT_DEPLOY_DIR  = src/server/public/admin
 
 PROJECT_DEPLOY      = ${PROJECT_DEPLOY_NAME}/${PROJECT_DEPLOY_DIR}
 

@@ -14,22 +14,26 @@ const App = () => {
     app.use(express.urlencoded({ extended: true }));
   };
 
-  const routes = () => {
-    const router: Router = Router();
-    router.use("/admin", adminRoutes);
-    router.use("/", siteRoutes);
-    app.use("/", router);
+  const statics = () => {
+    app.use("/admin", express.static(path.join(__dirname, "public/admin")));
+    app.use("/statics", express.static(path.join(__dirname, "public/statics")));
+    app.use("/uploads", express.static(path.join(__dirname, "public/uploads")));
     app.use(
       "/favicon.ico",
       express.static(path.join(__dirname, "public/favicon.ico"))
     );
-    app.use("/admin", express.static(path.join(__dirname, "public/admin")));
-    app.use("/statics", express.static(path.join(__dirname, "public/statics")));
-    app.use("/uploads", express.static(path.join(__dirname, "public/uploads")));
+  }
+
+  const routes = () => {
+    const router: Router = Router();    
+    router.use("/admin", adminRoutes);
+    router.use("/", siteRoutes);
+    app.use("/", router);
   };
 
   const init = () => {
     middlewares();
+    statics();
     routes();
     app.listen(process.env.SERVER_PORT);
     console.log(

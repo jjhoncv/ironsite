@@ -11,7 +11,7 @@ export const HeaderTopInfo = () => {
         <li>
           <a href="mailto:jjhoncv@gmail.com">
             <EmailIcon fontSize="small"/>
-            <span>desly.ipr@gmail.com</span>
+            <span>jjhoncv@gmail.com</span>
           </a>
         </li>
         <li>

@@ -11,10 +11,12 @@ build:
 		node:11-slim \
 		npm run build:server
 	
-	@mkdir -p app/dist/server/public
-	@cp -r app/src/server/public/statics app/dist/server/public/statics
-	@cp -r app/src/server/public/uploads app/dist/server/public/uploads
+	@mkdir -p app/dist/src/server/public
+	@cp -r app/src/server/public/statics app/dist/src/server/public/statics
+	@cp -r app/src/server/public/uploads app/dist/src/server/public/uploads
+	@cp -r app/src/server/public/favicon.ico app/dist/src/server/public
 	@cp -r app/package.json app/dist
+	@cp -r app/package-lock.json app/dist
 	@cp -r scripts app/dist
 	@cp app/.env.prod app/dist/.env
 	
@@ -26,7 +28,7 @@ build:
 		-w /app \
 		node:11-slim \
 		npm run build:client
-	@cp -r app/out/* app/dist/src/public/statics/js
+	@cp -r app/out/* app/dist/src/server/public/statics/js
 	
 deploy:
 	@rsync -avL \
