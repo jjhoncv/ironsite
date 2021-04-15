@@ -15,7 +15,6 @@ export const Home = ({ banners = null, connectionApi = null }) => {
     <Layout>
       <Banner banners={banners} />
       <StyledContainer>{connectionApi}</StyledContainer>
-      <img src={`${process.env.SERVER_STATICS}/imgs/79-26.png`} />
     </Layout>
   );
 };
