@@ -45,6 +45,21 @@ export const Header = () => {
                   </li>
                 </ul>
               </li>
+              <li>
+                <span>Banners</span>
+                <ul>
+                  <li>
+                    <NavLink exact to="/banners/add">
+                      add banner
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink exact to="/banners">
+                      banners
+                    </NavLink>
+                  </li>
+                </ul>
+              </li>
             </ul>
           </div>
         )}

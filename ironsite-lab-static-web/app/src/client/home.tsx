@@ -4,7 +4,7 @@ import { Home } from "./view/Home";
 
 const _data = (window as any).data;
 
-ReactDom.render(
+ReactDom.hydrate(
     <Home {..._data} />,
   document.getElementById("app")
 );

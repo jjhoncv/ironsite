@@ -5,3 +5,4 @@ node_modules
 DashboardApiKey.pem
 **/dist
 **/out
+**/public/uploads

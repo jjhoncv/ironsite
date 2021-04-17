@@ -19,7 +19,7 @@ import { useForm } from "react-hook-form";
 
 export const Register: React.FC<any> = () => {
   const isFetching = useSelector((state: any) => state.auth.isFetching);
-  const error = useSelector((state: any) => state.messageAlert.text);
+  const error = useSelector((state: any) => state.auth.error);
   const dispatch = useDispatch();
   const { register, errors, handleSubmit } = useForm();
 

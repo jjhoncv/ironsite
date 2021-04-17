@@ -1,0 +1,44 @@
+[
+  {
+    "label": "Home",
+    "link": "http://"
+  },
+  {
+    "label": "Services",
+    "link": "http://",
+    "items": [
+      {
+        "label": "Service 1",
+        "link": "http://"
+      },
+      {
+        "label": "Service 2",
+        "link": "http://"
+      },
+      {
+        "label": "Service 3",
+        "link": "http://"
+      }
+    ]
+  },
+  {
+    "label": "Pages",
+    "link": "http://"
+  },
+  {
+    "label": "Shop",
+    "link": "http://"
+  },
+  {
+    "label": "News",
+    "link": "http://"
+  },
+  {
+    "label": "Gallery",
+    "link": "http://"
+  },
+  {
+    "label": "Contact Us",
+    "link": "http://"
+  }
+]

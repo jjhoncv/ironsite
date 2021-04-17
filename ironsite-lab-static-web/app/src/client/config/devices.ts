@@ -1,6 +1,6 @@
 export enum DEVICES {
-  Mobile = "640px",
-  Tablet = "768px",
-  Desktop = "1024px",
-  DesktopL = "1440px",
+  Mobile = 640,
+  Tablet = 980,
+  Desktop = 1024,
+  DesktopL = 1440,
 }

@@ -23,20 +23,18 @@ const Option: React.FC<any> = ({ id, handleDelete, ...props }) => {
     history.push("products/edit/" + id, { product: props });
   };
 
-  const handleAceptarClick = () => {
+  const handleClickDelete = () => {
     dispatch(productActions.remove(id));
-    handleDelete && handleDelete();
+    dispatch(productActions.read());
   };
   return (
     <>
       <FloatMessage show={show} hide={() => setShow(false)}>
-        <FloatMessageBody>
-          ¿Esta seguro de eliminar el registro?
-        </FloatMessageBody>
+        <FloatMessageBody>¿Are you sure to delete it?</FloatMessageBody>
         <FloatMessageOptions align="left">
-          <Button handleClick={() => handleAceptarClick()}>Aceptar</Button>
+          <Button handleClick={() => handleClickDelete()}>Delete</Button>
           <Button outline handleClick={() => setShow(false)}>
-            Cancelar
+            Cancel
           </Button>
         </FloatMessageOptions>
       </FloatMessage>
@@ -46,20 +44,14 @@ const Option: React.FC<any> = ({ id, handleDelete, ...props }) => {
   );
 };
 
-export const ProductList = ({ location, ...props }) => {
+export const ProductList = () => {
   const isFetching = useSelector((state: any) => state.product.isFetching);
   const data = useSelector((state: any) => state.product.data);
   const error = useSelector((state: any) => state.product.error);
   const dispatch = useDispatch();
 
-  const handleDelete = () => {
-    dispatch(productActions.read());
-  };
-
   React.useEffect(() => {
-    if (data.length === 0) {
-      dispatch(productActions.read());
-    }
+    !data && dispatch(productActions.read());
   }, [data]);
 
   return (
@@ -71,12 +63,7 @@ export const ProductList = ({ location, ...props }) => {
           <h1>Products</h1>
         </PageHead>
         <PageBody>
-          <Table
-            Component={(props) => (
-              <Option {...props} handleDelete={handleDelete} />
-            )}
-            grid={data}
-          />
+          <Table Component={(props) => <Option {...props} />} grid={data} />
         </PageBody>
       </Page>
     </Container>

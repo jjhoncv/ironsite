@@ -28,6 +28,12 @@ module.exports = merge(baseConfig, {
       // chunks: 'all'
     }
   },
+  resolve: {
+    alias: {
+      "react": "preact/compat",
+      "react-dom": "preact/compat"
+    }
+  },
   devtool: 'hidden-source-map',
   mode: 'production',
   plugins: [

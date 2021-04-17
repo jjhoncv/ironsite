@@ -2,14 +2,15 @@ import * as React from "react";
 import "./style.scss";
 
 export const Input: React.FC<any> = React.forwardRef(
-  ({ fullWidth, error, ...props }, ref) => {
+  ({ fullWidth, value, error, ...props }, ref) => {
     return (
       <div className="input-wrap">
         <input
+          defaultValue={value}
           ref={ref}
           className={`input ${fullWidth ? "fullwidth" : ""}`}
           {...props}
-        />  
+        />
         {error && error.length && <span className="input-error">{error}</span>}
       </div>
     );

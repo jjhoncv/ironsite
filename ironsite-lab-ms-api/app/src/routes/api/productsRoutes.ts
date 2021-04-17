@@ -68,7 +68,7 @@ route.post("/", async (req: Request, res: Response) => {
     } else {
       res.json({
         status: false,
-        message: "No se pudo registrar al usuario",
+        message: "No se pudo registrar el recurso",
       });
     }
   } catch (e) {
@@ -97,7 +97,7 @@ route.put("/:id?", async (req: Request, res: Response) => {
     } else {
       res.json({
         status: false,
-        message: "No se pudo actualizar el producto",
+        message: "No se pudo actualizar el recurso",
       });
     }
   } catch (e) {

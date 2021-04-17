@@ -1,29 +1,44 @@
 import styled from "styled-components";
-import { COLORS } from "../../../../config/colors";
+import { COLORS } from "../../../../../config/colors";
+import { DEVICES } from "../../../../../config/devices";
 
 export const StyledMainMenu = styled.div`
   display: flex;
   height: 100%;
   align-items: center;
-  width: 100%;
+  width: 250px;
   justify-content: flex-end;
+  @media screen and (min-width: ${`${DEVICES.Tablet}px`}) {
+    display: none;
+  }
+  position: fixed;
+  left: 0;
+  top: 81px;
+  bottom: 0;
+  z-index: 999;
+  height: 100%;
+  right: 0;
+  background: white;
 
-  ul {
-    max-width: 775px;
+  > ul {
+    padding: 20px;
     display: flex;
+    flex-direction: column;
     width: 100%;
-    justify-content: space-between;
+    justify-content: flex-start;
     height: 100%;
     align-items: center;
     li {
+      width: 100%;
       position: relative;
-      height: 80%;
+      height: 50px;
       a {
         display: flex;
         align-items: center;
         color: ${COLORS.PRIMARY};
         font-size: 15px;
         height: 100%;
+        justify-content: space-between;
         svg {
           font-size: 17px;
           margin-left: 4px;

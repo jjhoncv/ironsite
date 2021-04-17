@@ -13,11 +13,11 @@ const App = () => {
     app.use(express.urlencoded({ extended: true }));
   };
 
-  const routes = () => {
+   const routes = () => {
     const router: Router = Router();
     router.use("/api", apiRoutes);
-    router.use("/", async (req, res) => {
-      res.send("<h3>API</h3><br/>"+await testConnection());
+    router.use("/", (req, res) => {
+      res.redirect("/api");
     });
     app.use("/", router);
   };
@@ -31,8 +31,7 @@ const App = () => {
     );
     (async () => {
       console.info(await testConnection());
-    })()
-    
+    })();
   };
 
   return {

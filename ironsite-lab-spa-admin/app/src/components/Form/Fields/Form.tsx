@@ -5,11 +5,16 @@ interface Props {
   children: any;
   onSubmit?: Function;
   grid?: boolean;
+  ref?: any;
 }
 
-export const Form: React.FC<Props> = ({ grid, onSubmit, children }) => {
+const FormForward: React.ForwardRefRenderFunction<any, Props> = (
+  { grid, onSubmit, children },
+  ref
+) => {
   return (
     <form
+      ref={ref as any}
       onSubmit={(e) => onSubmit(e)}
       className={`form ${grid ? "grid" : ""}`}
     >
@@ -17,3 +22,5 @@ export const Form: React.FC<Props> = ({ grid, onSubmit, children }) => {
     </form>
   );
 };
+
+export const Form = React.forwardRef(FormForward);
